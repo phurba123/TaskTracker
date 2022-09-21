@@ -21,8 +21,6 @@ export class TaskItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('task in task-item : ', this.task);
-    console.log('fatrash : ', faTrashCan)
   }
 
 }
