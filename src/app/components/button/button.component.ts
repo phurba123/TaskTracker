@@ -17,7 +17,6 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('btn text is : ', this.btnText , ' and btn color is : ', this.btnColor);
   }
 
   onBtnclicked(){

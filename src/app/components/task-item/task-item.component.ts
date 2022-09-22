@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Task} from '../../task_interface';
 
 // font awesome icon import in component
@@ -18,9 +18,20 @@ export class TaskItemComponent implements OnInit {
 
   @Input() task!:Task;
 
+  @Output() deleteTaskEvent = new EventEmitter();
+  @Output() toggleReminderEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteTask(task:Task){
+    this.deleteTaskEvent.emit(task);
+  }
+
+  toggleReminder(task:Task){
+    this.toggleReminderEvent.emit(task);
   }
 
 }

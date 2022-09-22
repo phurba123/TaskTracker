@@ -1,6 +1,7 @@
-<div *ngIf="task" class="task">
+<div *ngIf="task" class="task" [ngClass]="task.reminder? 'reminder':''"
+    (dblclick)="toggleReminder(task)">
     <h3>{{task.text}} 
-        <fa-icon [icon]="faTrashCan" style="color: red;"></fa-icon> 
+        <fa-icon [icon]="faTrashCan" style="color: red;" (click)="deleteTask(task)"></fa-icon> 
     </h3>
     <p>{{task.day}}</p>
 </div>

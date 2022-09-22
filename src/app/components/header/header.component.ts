@@ -14,6 +14,5 @@ export class HeaderComponent implements OnInit {
   }
 
   onBtnclick(e:any){
-    console.log('received',e)
   }
 }
