@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this._event.onToggle().subscribe((val:boolean)=>{
-      console.log('event listener show task boolean val : ', val)
       this.showAddTask = val;
     })
   }

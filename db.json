@@ -29,6 +29,18 @@
       "day": "fsdfd",
       "reminder": false,
       "id": 7
+    },
+    {
+      "text": "new task",
+      "day": "custom date",
+      "reminder": true,
+      "id": 8
+    },
+    {
+      "text": "fdf",
+      "day": "sfsf",
+      "reminder": true,
+      "id": 9
     }
   ],
   "info": {

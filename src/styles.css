@@ -76,3 +76,9 @@ body {
   flex: 2;
   height: 20px;
 }
+
+@media screen and (max-width : 600px) {
+  .container{
+    border: none;
+  }
+}
