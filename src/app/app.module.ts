@@ -9,6 +9,13 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http';
 import { TaskAddComponent } from './components/task-add/task-add.component';
+import { FormsModule } from '@angular/forms';
+import { RoutingModule } from './app.routing';
+// import {RouterModule, Routes} from '@angular/router';
+
+// const routes:Routes = [
+//   {path:'',component:TasksComponent}
+// ]
 
 @NgModule({
   declarations: [
@@ -22,7 +29,10 @@ import { TaskAddComponent } from './components/task-add/task-add.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RoutingModule
+    // RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

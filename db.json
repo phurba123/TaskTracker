@@ -17,6 +17,18 @@
       "text": "Shopping",
       "day": "jan 7th at 12:30pm",
       "reminder": false
+    },
+    {
+      "text": "tytyt",
+      "day": "tyyty",
+      "reminder": true,
+      "id": 6
+    },
+    {
+      "text": "fsdf",
+      "day": "fsdfd",
+      "reminder": false,
+      "id": 7
     }
   ],
   "info": {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // sinterface for task
 import {Task} from '../../task_interface';
 import { TaskService } from '../../services/task.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-tasks',
@@ -10,16 +11,23 @@ import { TaskService } from '../../services/task.service';
 })
 export class TasksComponent implements OnInit {
   tasks!:Task[] ;
+  showAddTaskForm:boolean = false;
 
   constructor(
-    private taskService:TaskService
+    private taskService:TaskService,
+    private _event : EventService
   ) 
-  { }
+  {
+    this._event.onToggle().subscribe((val:boolean)=>{
+      this.showAddTaskForm = val;
+    })
+  }
 
   ngOnInit(): void {
     // calling getTasks() method of task service for getting all the task
     this.taskService.getTasks().subscribe((res:Task[])=>{
-      this.tasks = res;
+      // reverse tasks so that new task will appear at top
+      this.tasks = res.reverse();
     });
   };
 
@@ -43,6 +51,15 @@ export class TasksComponent implements OnInit {
     (err:any)=>{
       //incase of error while updating data to server, hadle it 
       console.log('err:toggleReminder : ',err); //for now just console an error
+    })
+  }
+
+  // add task method
+  addTask(e:Task){
+    // console.log('e : ', e);
+    this.taskService.addTask(e).subscribe((task)=>{
+      // insert newly added task as a first element in tasks array
+      this.tasks.unshift(task);
     })
   }
 

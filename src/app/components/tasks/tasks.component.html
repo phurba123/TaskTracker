@@ -1,4 +1,4 @@
-<app-task-add></app-task-add>
+<app-task-add *ngIf="showAddTaskForm" (addTaskEvent)="addTask($event)"></app-task-add>
 <div *ngIf="tasks">
     <!-- <p *ngFor="let task of tasks">{{task.text}}</p> -->
     <app-task-item *ngFor="let task of tasks" 

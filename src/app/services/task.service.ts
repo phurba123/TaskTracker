@@ -33,8 +33,13 @@ export class TaskService {
     return this.http.delete(`${this._url}/Tasks/${taskId}`);
   }
 
-  //
+  //Toggling reminder for a task, setting reminder true or false
   toggleReminderOfTask(task:Task):Observable<any>{
     return this.http.put(`${this._url}/Tasks/${task.id}`,task);
+  }
+
+  // adding new Task
+  addTask(task:Task):Observable<any>{
+    return this.http.post(`${this._url}/Tasks`,task);
   }
 }
